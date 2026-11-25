@@ -14,6 +14,9 @@ Course: AI Engineer training. The following work was reported by Lourdes as pend
   - Module 2 — entire module pending; 3 points remain, plus project `Mi Asistente 4Geeks. Enseñándole a OpenClaw a seguir tu progreso` — pending.
 - Topic 7: Module 1 — entire module pending, including project `Especificaciones y prototipo guiado por prompts de AgentHub` — pending.
 
+## Shared 4Geeks API client
+<!-- project: github.com/4GeeksAcademy/openclaw-LourdesAliste --> As of 2026-11-24, the common read-only client is in `skills/fourgeeks-api-common/`. `scripts/run_api_get.py` reads `TOKEN_4GEEKS` from the existing `/root/.openclaw/.env` (file remains unchanged) and passes it to `scripts/api_get.py` for that child process; no persistent token copy is created. The client only permits allowlisted GET routes, blocks redirects, validates TLS, and suppresses response bodies. Offline tests passed (six tests); a live `GET /v1/admissions/user/me` later succeeded with the response body suppressed. Four existing skills have not been integrated. Never store or reveal the token value. Continue by reviewing this common layer before integrating the four skills.
+
 ## Tracking conventions
 
 - Track task status (pending / in progress / completed), confirmed progress and remaining work, blockers or concepts to reinforce, next steps and due dates, and topics studied or still pending.
